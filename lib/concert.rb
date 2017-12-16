@@ -15,4 +15,24 @@ class UpcomingConcerts::Concert
 
   end
 
+  def self.scrape_ogden
+
+    doc = Nokogiri::HTML(open(www.ogdentheatre.com/events))
+
+    binding.pry
+
+  end
+
+  def self.scrape_fillmore
+
+    doc = Nokogiri::HTML(open)
+
+  end
+
+  def self.scrape_beonkeys
+
+    doc = Nokogiri::HTML(open)
+
+  end
+
 end
