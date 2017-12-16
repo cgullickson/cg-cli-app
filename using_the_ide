@@ -1,0 +1,24 @@
+
+Hi! 👋
+
+You’ve opened the IDE in a temporary directory. 🎉
+
+This means that you launched the IDE without using the "Open" button on Learn or
+without running `learn open` in the IDE terminal. Since opening the IDE this way
+means you aren’t working on a specific lab, we place you in a "temporary"
+directory.
+
+When you’re in a temporary directory, the IDE WILL NOT save files or directories
+created here 💨 (even if you save them during your temporary session).
+
+In other words, the "temporary" directory is just that: a temporary workspace.
+If you want to store anything created here, be sure to back it up to a
+repository on Github.
+
+For the best IDE workflow, we recommend opening the IDE by clicking the "Open"
+button from your lab page on Learn, or running `learn open`.
+
+You can actually do that now by typing `learn open` in the terminal below. This
+will open a new IDE workspace (aka a new IDE window) for your current lab, and
+💫💫  your progress will be automatically saved to your GitHub 💫💫 so that we
+can restore it should you revisit that lab in the IDE in the future.
