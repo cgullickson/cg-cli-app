@@ -1,4 +1,4 @@
-require_relative "bundler/setup"
-require_relative "upcoming_concerts.rb"
+require "bundler/setup"
+require "upcoming_concerts.rb"
 
 UpcomingConcerts::CLI.new.call
