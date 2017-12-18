@@ -1,7 +1,3 @@
-require "bundler/setup"
-require "upcoming_concerts"
-require "nokogiri"
-
 class UpcomingConcerts::Concert
   attr_accessor :artist, :showtime, :price, :ticket_url, :date
 

@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "upcoming_concerts/version"
+require "upcoming/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "upcoming_concerts"
-  spec.version       = UpcomingConcerts::VERSION
+  spec.name          = "upcoming"
+  spec.version       = Upcoming::VERSION
   spec.authors       = ["'Chris Gullickson'"]
   spec.email         = ["'cgullickson5@gmail.com'"]
 
@@ -32,7 +32,4 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "pry"
-  
 end
