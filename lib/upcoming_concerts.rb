@@ -1,6 +1,7 @@
 require "upcoming_concerts/version"
-require_relative "upcoming_concerts"
+require "nokogiri"
+require "pry"
 
-module UpcomingConcerts
-  # Your code goes here...
-end
+require_relative "./upcoming_concerts/version"
+require_relative "./upcoming_concerts/cli"
+require_relative "./upcoming_concerts/concert"
