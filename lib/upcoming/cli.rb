@@ -11,7 +11,7 @@ class Upcoming::CLI
     puts "Denver's Upcoming Concerts:"
     @concerts = Upcoming::Concert.today
     @concerts.each.with_index(1) do |concert, i|
-      puts "#{i}. #{concert.artist} - #{concert.date}"
+      puts "#{i}. #{concert.artist}"
     end
 
   end
@@ -19,18 +19,22 @@ class Upcoming::CLI
   def menu
     input = nil
     while input != "exit"
-      puts "Which concert would you like more information about? Please enter 1-5, or enter list concerts"
+      puts "Which concert would you like more information about? Please enter 1-5, list concerts, or exit."
       input = gets.strip.downcase
 
       if input.to_i > 0
-        the_concert = @concerts[input.to_i - 1]
-        puts "#{i}. #{concert.artist} - #{concert.date} - #{concert.price} - #{concert.showtime} - #{concert.ticket-url}"
+        concert = @concerts[input.to_i - 1]
+        puts "#{input}. #{concert.artist} - #{concert.price} - #{concert.showtime} - #{concert.location} - "
       elsif input == "list concerts"
         list_concerts
       else
         puts "Not sure what you want, please enter 1-5, list deals, or exit"
       end
     end
+  end
+
+  def goodbye
+    puts "Thank you, enjoy the show!"
   end
 
 end
