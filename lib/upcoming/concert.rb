@@ -27,7 +27,7 @@ class Upcoming::Concert
 
   def self.scrape_ogden
 
-    doc = Nokogiri::HTML(open("http://www.ogdentheatre.com/events"))
+    doc = Nokogiri::HTML(open("http://www.google.com/search?q=ogden+calendar&oq=ogden+calendar&aqs=chrome..69i57.1939j0j7&sourceid=chrome&ie=UTF-8"))
 
     binding.pry
 
