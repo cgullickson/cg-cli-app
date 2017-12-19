@@ -8,18 +8,26 @@ class Upcoming::Concert
   end
 
   def self.today
-    #return upcoming Concerts
-    @concerts  << self.scrape_ogden
-    @concerts << self.scrape_fillmore
-    @concerts << self.scrape_beonkeys
+    #return upcoming Concert
+    self.scrape_concerts
 
-    @concerts
+  end
+
+  def self.scrape_concerts
+
+    concerts = []
+
+    concerts  << self.scrape_ogden
+    concerts << self.scrape_fillmore
+    concerts << self.scrape_beonkeys
+
+    concerts
 
   end
 
   def self.scrape_ogden
 
-    doc = Nokogiri::HTML(open("https://www.ogdentheatre.com/events"))
+    doc = Nokogiri::HTML(open("http://www.ogdentheatre.com/events"))
 
     binding.pry
 
