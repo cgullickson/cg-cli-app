@@ -1,4 +1,3 @@
-
 class Upcoming::CLI
 
   def call
