@@ -21,6 +21,7 @@ class Upcoming::CLI
     while input != "exit"
       puts "Which concert would you like more information about? Please enter 1-5, or enter list concerts"
       input = gets.strip.downcase
+
       if input.to_i > 0
         the_concert = @concerts[input.to_i - 1]
         puts "#{i}. #{concert.artist} - #{concert.date} - #{concert.price} - #{concert.showtime} - #{concert.ticket-url}"

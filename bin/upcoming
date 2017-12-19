@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
 
+require "bundler/setup"
+require "nokogiri"
+
+require "upcoming"
+
 require './lib/upcoming'
 
 Upcoming::CLI.new.call
