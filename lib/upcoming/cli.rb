@@ -1,15 +1,15 @@
 class Upcoming::CLI
 
   def call
+    puts "Tonight's Biggest Concerts in Denver:"
     list_concerts
+    Upcoming::Scraper.new.scrape_concerts
     menu
     goodbye
   end
 
   def list_concerts
-
-    puts "Tonight's Biggest Concerts in Denver:"
-    @concerts = Upcoming::Concert.today
+    @concerts = Upcoming::Concert.all
     @concerts.each.with_index(1) do |concert, i|
       puts "#{i}. #{concert.artist}"
     end
@@ -23,7 +23,7 @@ class Upcoming::CLI
       puts "Please enter 1-5, list concerts, or exit."
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i - 1 <= @concerts.size
         concert = @concerts[input.to_i - 1]
         puts "#{input}. #{concert.artist} - #{concert.price} - #{concert.showtime} - #{concert.location}"
         puts "For artist info and ticketing information,"
