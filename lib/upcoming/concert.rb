@@ -1,7 +1,9 @@
 require 'pry'
 
 class Upcoming::Concert
-  attr_accessor :artist, :showtime, :price, :ticket_url, :date, :location
+  attr_accessor :artist, :showtime, :price, :ticket_url, :location, :concerts
+
+  @concerts = [concert_1, concert_2, concert_3, concert_4, concert_5]
 
   def initialize
 
@@ -13,17 +15,25 @@ class Upcoming::Concert
 
   end
 
+
   def self.scrape_concerts
 
-    concerts = []
+  counter = 1
 
-    concerts << self.scrape_concert_1
-    concerts << self.scrape_concert_2
-    concerts << self.scrape_concert_3
-    concerts << self.scrape_concert_4
-    concerts << self.scrape_concert_5
+  @concerts.each do |concert|
 
-    concerts
+    concert = self.new
+    concert.artist = doc.css(".title")[counter].text
+    concert.showtime = doc.css(".time")[counter].text.strip
+    concert.location = doc.css(".location")[counter].text.strip
+    concert.price = doc.css(".price")[counter].text
+    concert.ticket_url = "westword.com" + doc.css(".title")[counter].css("a").attr("href").value
+
+    counter += 1
+
+    end
+
+  concerts
 
   end
 
