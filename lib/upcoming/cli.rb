@@ -26,14 +26,15 @@ class Upcoming::CLI
       if input.to_i > 0
         concert = @concerts[input.to_i - 1]
         puts "#{input}. #{concert.artist} - #{concert.price} - #{concert.showtime} - #{concert.location}"
-        puts "For more info and ticketing information,"
+        puts "For artist info and ticketing information,"
         puts "visit #{concert.ticket_url}"
+        puts ""
       elsif input == "list concerts"
         list_concerts
       elsif input == "exit"
         nil
       else
-        puts "Not sure what you want, please enter 1-5, list deals, or exit"
+        puts "Please enter 1-5, list deals, or exit"
       end
     end
   end

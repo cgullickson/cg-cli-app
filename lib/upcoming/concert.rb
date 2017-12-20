@@ -17,7 +17,7 @@ class Upcoming::Concert
 
     concerts = []
 
-    concerts  << self.scrape_concert_1
+    concerts << self.scrape_concert_1
     concerts << self.scrape_concert_2
     concerts << self.scrape_concert_3
     concerts << self.scrape_concert_4
