@@ -1,8 +1,6 @@
 # UpcomingConcerts
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/upcoming_concerts`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem is used for finding the biggest and best concerts in the Denver area on any particular night!
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To begin, simply run the program, look at the list of concerts given by the program, and enter the concert that interests you most. From there you will be able to see the artist, price, time, and location, and visit the website where you will be able to buy tickets for the show.
 
 ## Development
 
