@@ -12,11 +12,15 @@ class Upcoming::Scraper
 
       concert = Upcoming::Concert.new
 
-      concert.artist = concert_li.css(".title")[counter].text
-      concert.showtime = concert_li.css(".time")[counter].text.strip
-      concert.location = concert_li.css(".location")[counter].text.strip
-      concert.price = concert_li.css(".price")[counter].text
-      concert.ticket_url = "westword.com" + concert_li.css(".title")[counter].css("a").attr("href").value
+      concert.artist = concert_li.css(".title").text
+      concert.showtime = concert_li.css(".time").text.strip
+      concert.location = concert_li.css(".location").text.strip
+      concert.price = concert_li.css(".price").text
+      if concert_li.css(".title").css("a").text == ""
+        concert.ticket_url = nil
+      else
+        concert.ticket_url = "westword.com" + concert_li.css(".title").css("a").attr("href").value
+      end
 
       concert.save
       counter += 1
