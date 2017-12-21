@@ -2,14 +2,14 @@ class Upcoming::CLI
 
   def call
     puts "Tonight's Biggest Concerts in Denver:"
-    list_concerts
     Upcoming::Scraper.new.scrape_concerts
+    list_concerts
     menu
     goodbye
   end
 
   def list_concerts
-    @concerts = Upcoming::Concert.all
+    @concerts = Upcoming::Concert.all.first(5)
     @concerts.each.with_index(1) do |concert, i|
       puts "#{i}. #{concert.artist}"
     end

@@ -5,12 +5,17 @@ class Upcoming::Concert
 
   @@all = []
 
-  def save
+  def initialize(artist, showtime, price, ticket_url, location)
+    @artist = artist
+    @showtime = showtime
+    @price = price
+    @ticket_url = ticket_url
+    @location = location
     @@all << self
   end
 
   def self.all
-    @@all 
+    @@all
   end
 
 end
