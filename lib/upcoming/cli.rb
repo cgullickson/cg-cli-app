@@ -23,7 +23,7 @@ class Upcoming::CLI
       puts "Please enter 1-5, list concerts, or exit."
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i > 0 && input.to_i <= 5
         concert = @concerts[input.to_i - 1]
         puts "#{input}. #{concert.artist} - #{concert.price} - #{concert.showtime} - #{concert.location}"
         puts "For artist info and ticketing information,"
